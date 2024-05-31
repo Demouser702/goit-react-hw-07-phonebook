@@ -1,0 +1,29 @@
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-state {
+  font-style: italic;
+  color: #666;
+}

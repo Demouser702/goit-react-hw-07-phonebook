@@ -1,0 +1,17 @@
+.contactsList {
+  background: white;
+  padding: 16px;
+}
+
+.phonebookListItem {
+  display: flex;
+  gap: 8px;
+  padding-left: 40px;
+}
+.box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
