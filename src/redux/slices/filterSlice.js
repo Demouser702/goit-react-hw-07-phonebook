@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   error: null,
 };
+
 export const fetchFilteredContacts = createAsyncThunk(
   'filter/fetchFilteredContacts',
   async filterTerm => {
@@ -24,18 +25,19 @@ const filterSlice = createSlice({
       state.term = action.payload;
     },
   },
-  extraReducers: {
-    [fetchFilteredContacts.pending]: state => {
-      state.isLoading = true;
-    },
-    [fetchFilteredContacts.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      // Poți actualiza starea pentru a stoca rezultatele filtrate în funcție de termenul de căutare
-    },
-    [fetchFilteredContacts.rejected]: (state, action) => {
-      state.isLoading = false;
-      state.error = action.error.message;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchFilteredContacts.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(fetchFilteredContacts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // You can update the state here to store the filtered results based on the search term
+      })
+      .addCase(fetchFilteredContacts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

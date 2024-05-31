@@ -72,8 +72,7 @@ const contactsSlice = createSlice({
   },
 });
 
-export const { selectContacts, selectContactsLoading } = contactsSlice;
+export const selectContacts = state => state.contacts.items;
+export const selectContactsLoading = state => state.contacts.isLoading;
 
 export const contactsReducer = contactsSlice.reducer;
-
-export default contactsSlice.reducer;
